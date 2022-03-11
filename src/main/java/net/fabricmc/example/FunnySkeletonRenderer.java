@@ -21,6 +21,6 @@ public class FunnySkeletonRenderer extends MobEntityRenderer<FunnySkeleton, Funn
 
     @Override
     public Identifier getTexture(FunnySkeleton entity) {
-       return null;
+       return new Identifier("dimensionmod", "textures/entities/funny_skeleton_texture.png");
     }
 }
