@@ -1,9 +1,6 @@
-# Fabric Example Mod
-
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+# About
+This teaches you how to add a custom entity to your json dimension because minecraft doesn't have an entity parameter (I might make a mod that adds that if demanded)
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+This template is licensed under MPL v2.0
