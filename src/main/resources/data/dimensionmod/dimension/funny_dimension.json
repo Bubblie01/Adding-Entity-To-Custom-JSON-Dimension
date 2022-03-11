@@ -2,11 +2,11 @@
   "type": "minecraft:overworld",
   "generator": {
     "type": "minecraft:noise",
-    "seed": -86812774,
+    "seed": 183827488,
     "settings": "minecraft:overworld",
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "minecraft:badlands"
+      "biome": "minecraft:beach"
     }
   }
 }

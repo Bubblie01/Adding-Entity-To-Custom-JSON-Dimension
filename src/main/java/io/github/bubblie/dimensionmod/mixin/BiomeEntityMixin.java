@@ -1,6 +1,6 @@
-package net.fabricmc.example.mixin;
+package io.github.bubblie.dimensionmod.mixin;
 
-import net.fabricmc.example.FunnySkeleton;
+import io.github.bubblie.dimensionmod.FunnySkeleton;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;

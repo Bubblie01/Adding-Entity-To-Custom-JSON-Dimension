@@ -1,23 +1,18 @@
-package net.fabricmc.example;
+package io.github.bubblie.dimensionmod;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.fabricmc.fabric.impl.object.builder.FabricEntityType;
 import net.minecraft.entity.*;
 import net.minecraft.entity.mob.AbstractSkeletonEntity;
 import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.*;
-import net.minecraft.world.dimension.DimensionType;
-import org.jetbrains.annotations.Nullable;
 
 public class FunnySkeleton extends SkeletonEntity {
 
@@ -32,10 +27,9 @@ public class FunnySkeleton extends SkeletonEntity {
     @Override
     protected ActionResult interactMob(PlayerEntity player, Hand hand) {
 
-        if (!world.isClient && handSwinging) {
-            player.sendMessage(Text.of("Hello, I am a dummy entity! "), false);
+        if (!world.isClient) {
+            player.sendMessage(Text.of("Hello, I am a dummy entity! " + this.getEntityWorld().getRegistryKey().getValue().getPath()), false);
         }
-
 
         return super.interactMob(player, hand);
     }
@@ -47,10 +41,18 @@ public class FunnySkeleton extends SkeletonEntity {
 
     @Override
     public boolean canSpawn(WorldView world) {
-        if(this.getEntityWorld().getRegistryKey().getValue().getPath() == "funny_dimension")
+        String path = this.world.getRegistryKey().getValue().getPath();
+        if(path.equals(Main.FUNNY_DIMENSION_NAME))
         {
-            return true;
+            return super.canSpawn(world);
         }
         return false;
+    }
+
+
+    @Override
+    public void onSpawnPacket(EntitySpawnS2CPacket packet) {
+
+        super.onSpawnPacket(packet);
     }
 }

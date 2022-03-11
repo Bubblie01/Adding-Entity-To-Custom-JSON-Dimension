@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package io.github.bubblie.dimensionmod;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;

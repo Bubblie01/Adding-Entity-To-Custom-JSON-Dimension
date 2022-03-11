@@ -1,18 +1,11 @@
-package net.fabricmc.example;
+package io.github.bubblie.dimensionmod;
 
-import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.client.render.entity.SkeletonEntityRenderer;
-import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
-import net.minecraft.client.render.entity.model.PlayerEntityModel;
-import net.minecraft.client.render.entity.model.SkeletonEntityModel;
-import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.util.Identifier;
 
-public class FunnySkeletonRenderer extends MobEntityRenderer<FunnySkeleton, FunnySkeletonModel>
-{
+public class FunnySkeletonRenderer extends MobEntityRenderer<FunnySkeleton, FunnySkeletonModel> {
 
 
     public FunnySkeletonRenderer(EntityRendererFactory.Context context) {

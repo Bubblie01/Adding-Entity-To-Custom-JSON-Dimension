@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
   "id": "dimensionmod",
-  "version": "${version}",
+  "version": "1.0.0",
 
-  "name": "Example Mod",
+  "name": "Entity-To-Dimension-JSON",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Me!"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Bubblie01/Adding-Entity-To-Custom-JSON-Dimension"
   },
 
-  "license": "CC0-1.0",
+  "license": "MPL-2.0",
   "icon": "assets/dimensionmod/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.Main"
+      "io.github.bubblie.dimensionmod.Main"
     ],
     "client": [
-      "net.fabricmc.example.ClientInitializer"
+      "io.github.bubblie.dimensionmod.ClientInitializer"
     ]
   },
   "mixins": [
