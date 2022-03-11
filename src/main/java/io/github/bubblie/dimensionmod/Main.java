@@ -14,7 +14,8 @@ public class Main implements ModInitializer {
 	public void onInitialize() {
 		//Fabric might tell you attributes weren't registered, but they are.
 		FunnySkeleton.registerFunnySkeleton();
-		//BiomeModifications.addSpawn(BiomeSelectors.categories(Biome.Category.MESA), SpawnGroup.MONSTER, FunnySkeleton.FUNNY_SKELETON, 100, 4, 4);
+		//It is reccomended that you use BiomeSelectors for this, my mixin is only there if you do need to for some reason use it for this. A good reason is if this method stops working.
+		BiomeModifications.addSpawn(BiomeSelectors.categories(Biome.Category.MESA), SpawnGroup.MONSTER, FunnySkeleton.FUNNY_SKELETON, 100, 4, 4);
 
 
 	}

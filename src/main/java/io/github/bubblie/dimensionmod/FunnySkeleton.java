@@ -21,6 +21,7 @@ public class FunnySkeleton extends SkeletonEntity {
         super(entityType, world);
     }
 
+    //Where we register our mob.
     public static final EntityType<FunnySkeleton> FUNNY_SKELETON = Registry.register(Registry.ENTITY_TYPE, new Identifier("dimensionmod", "funny_skeleton"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, FunnySkeleton::new).dimensions(EntityDimensions.fixed(0.6f, 1.8f)).build());
 
 
@@ -28,6 +29,7 @@ public class FunnySkeleton extends SkeletonEntity {
     protected ActionResult interactMob(PlayerEntity player, Hand hand) {
 
         if (!world.isClient) {
+            //A test to see that it is getting the right json file.
             player.sendMessage(Text.of("Hello, I am a dummy entity! " + this.getEntityWorld().getRegistryKey().getValue().getPath()), false);
         }
 
@@ -36,11 +38,13 @@ public class FunnySkeleton extends SkeletonEntity {
 
 
     public static void registerFunnySkeleton() {
+        //Some entity attributes.
         FabricDefaultAttributeRegistry.register(FUNNY_SKELETON, AbstractSkeletonEntity.createAbstractSkeletonAttributes());
     }
 
     @Override
     public boolean canSpawn(WorldView world) {
+        //This is where we adjust the spawning so that it specifically spawns in our dimension.
         String path = this.world.getRegistryKey().getValue().getPath();
         if(path.equals(Main.FUNNY_DIMENSION_NAME))
         {

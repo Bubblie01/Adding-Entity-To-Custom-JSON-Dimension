@@ -12,8 +12,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(DefaultBiomeFeatures.class)
 public class BiomeEntityMixin {
 
+    //Mixin option in case you ever want to.
     @Inject(at = @At("TAIL"), method = "addMonsters")
     private static void addFunnySkeleton(SpawnSettings.Builder builder, int zombieWeight, int zombieVillagerWeight, int skeletonWeight, boolean drowned, CallbackInfo ci) {
-        builder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(FunnySkeleton.FUNNY_SKELETON, skeletonWeight, 4, 4));
+        //builder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(FunnySkeleton.FUNNY_SKELETON, skeletonWeight, 4, 4));
     }
 }
